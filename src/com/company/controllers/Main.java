@@ -64,6 +64,7 @@ public class Main {
         return letters;
     }
 
+    @SuppressWarnings("StatementWithEmptyBody")
     private static String[] guess(){
 
         theGuess = view.makeAGuess();
@@ -75,6 +76,8 @@ public class Main {
                 hints[i] = theGuess;
                 catchWrongGuess = false;
             }
+            //This is easier to read than " !Object.equals(hints[i], b: "_") "
+            //which IntelliJ suggests, plus it works both ways
             else if(hints[i] != "_" && hints[i] != null){
                 //No change, keep already guessed letters
                 //IntelliJ says this is an error, but I need it
